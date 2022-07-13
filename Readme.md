@@ -29,3 +29,4 @@ The module twin is used to configure the connection to a local MQTT broker.
 Since this is just a sample, I could ommit some best practices (and leave them to you (to do a pull request)) ;-)
 
 - [Edge Secret Management](https://github.com/vslepakov/edge-secrets) - to store the MQTT password in a secure way
+- optional read settings from local file instead of module twin (or in addition)

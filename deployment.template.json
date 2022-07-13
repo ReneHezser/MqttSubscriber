@@ -63,7 +63,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "${MODULEDIR<../MqttSubscriberModule>}",
+              "image": "${MODULEDIR<./MqttSubscriberModule>}",
               "createOptions": {}
             }
           }
