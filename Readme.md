@@ -6,11 +6,11 @@ This sample module lets you subscribe to Mqtt topics on a (local) broker and sen
 
 This IoT Edge module can be used as a replacement for the 1.2 preview MQTT broker functunality (in combination with e.g. Mosquitto).
 
-## TODO
-
-- add authentication to the MQTT broker
-
 ## Configuration
+
+Following IoT Edge principals, the configuration is done on device/module level by setting the module twin. To change them, or view transmitted data, you can use the [IoT Explorer](https://github.com/Azure/azure-iot-explorer).
+
+![IoT Explorer - Module Twin](/assets/IoT-Explorer-Module-Twin.jpg)
 
 ### Module Twin
 
@@ -23,6 +23,7 @@ The module twin is used to configure the connection to a local MQTT broker.
 | `MqttTopics` | string | Yes | Comma separated list of topics to subscribe to |
 | `MqttUser` | string | No | Username for the local MQTT broker |
 | `MqttPassword` | string | No | Password for the local MQTT broker |
+| `MqttMessageTemplate` | string | No | 
 
 ## recommended improvements
 

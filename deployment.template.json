@@ -11,8 +11,8 @@
             "loggingOptions": "",
             "registryCredentials": {
               "ghcr": {
-                "username": "$CONTAINER_REGISTRY_USERNAME_ghcr",
-                "password": "$CONTAINER_REGISTRY_PASSWORD_ghcr",
+                "username": "$CONTAINER_REGISTRY_USERNAME",
+                "password": "$CONTAINER_REGISTRY_PASSWORD",
                 "address": "ghcr.io"
               }
             }
