@@ -20,7 +20,7 @@ namespace MqttSubscriberModule
     {
         static int counter;
         private static string _mqttServer;
-        private static int _mqttServerPort;
+        private static int _mqttServerPort = 1883;
         private static string _mqttUsername;
         private static string _mqttPassword;
         private static string[] _mqttTopics;
@@ -81,6 +81,8 @@ namespace MqttSubscriberModule
                 Console.WriteLine("Desired property change:");
                 Console.WriteLine(JsonConvert.SerializeObject(desiredProperties));
 
+                _mqttUsername = desiredProperties["MqttUser"]?.Value;
+                _mqttPassword = desiredProperties["MqttPassword"]?.Value;
                 if (desiredProperties["MqttServer"] != null)
                 {
                     _mqttServer = desiredProperties["MqttServer"].Value;
@@ -135,6 +137,16 @@ namespace MqttSubscriberModule
                 .Build();
 
             await _managedMqttClient.StartAsync(managedMqttClientOptions);
+            _managedMqttClient.ConnectingFailedAsync += (arg) =>
+            {
+                Console.WriteLine($"Failed to connect to MQTT broker '{_mqttServer}:{_mqttServerPort}': {arg.Exception.Message}, {arg.Exception.InnerException?.Message}");
+                return Task.CompletedTask;
+            };
+            _managedMqttClient.ConnectionStateChangedAsync += (arg) =>
+            {
+                Console.WriteLine($"MQTT broker '{_mqttServer}:{_mqttServerPort}' connection state changed");
+                return Task.CompletedTask;
+            };
 
             _managedMqttClient.ApplicationMessageReceivedAsync += OnMessageReceived;
 
