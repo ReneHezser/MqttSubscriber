@@ -23,7 +23,7 @@ The module twin is used to configure the connection to a local MQTT broker.
 | `MqttTopics` | string | Yes | Comma separated list of topics to subscribe to |
 | `MqttUser` | string | No | Username for the local MQTT broker |
 | `MqttPassword` | string | No | Password for the local MQTT broker |
-| `MqttMessageTemplate` | string | No | 
+| `MqttMessageTemplate` | string | No | this property controlls the body of the message sent to IoT Hub. Default: `{\"[topic]\":[message]}` |
 
 ## recommended improvements
 
