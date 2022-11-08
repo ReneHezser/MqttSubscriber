@@ -31,3 +31,4 @@ Since this is just a sample, I could ommit some best practices (and leave them t
 
 - [Edge Secret Management](https://github.com/vslepakov/edge-secrets) - to store the MQTT password in a secure way
 - optional read settings from local file instead of module twin (or in addition)
+- implement batching to reduce the amount of messages sent to IoT Hub
