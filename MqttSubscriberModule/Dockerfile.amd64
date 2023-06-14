@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:7.0.302-bullseye-slim AS build-env
+FROM mcr.microsoft.com/dotnet/sdk:7.0.304-bullseye-slim AS build-env
 WORKDIR /app
 
 LABEL org.opencontainers.image.source https://github.com/ReneHezser/MqttSubscriber
