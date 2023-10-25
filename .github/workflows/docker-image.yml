@@ -20,9 +20,8 @@ jobs:
       uses: antifree/json-to-variables@v1.1.1
       with:
         filename: './MqttSubscriberModule/module.json'
-        prefix: module
     - name: Show output
-      run: echo "The module version is ${{ env.moduleimage_tag_version }}"
+      run: echo "The module version is ${{ env.image_tag_version }}"
 
     # build and push images
     - name: Set up QEMU
@@ -51,6 +50,6 @@ jobs:
         platforms: linux/amd64 #,linux/arm64,linux/arm/v7
         push: true
         tags: |
-          ghcr.io/renehezser/iot-edge/mqttsubscribermodule:${{ env.moduleimage_tag_version }}
-          ghcr.io/renehezser/iot-edge/mqttsubscribermodule:${{ env.moduleimage_tag_version }}-amd64
+          ghcr.io/renehezser/iot-edge/mqttsubscribermodule:${{ env.image_tag_version }}
+          ghcr.io/renehezser/iot-edge/mqttsubscribermodule:${{ env.image_tag_version }}-amd64
           ghcr.io/renehezser/iot-edge/mqttsubscribermodule:latest
