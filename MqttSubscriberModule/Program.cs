@@ -157,7 +157,7 @@ namespace MqttSubscriberModule
         {
             Console.WriteLine("Received application message.");
             var topic = arg.ApplicationMessage.Topic;
-            var payload = Encoding.Default.GetString(arg.ApplicationMessage.Payload ?? new byte[0]);
+            var payload = Encoding.Default.GetString(arg.ApplicationMessage.PayloadSegment.Array ?? new byte[0]);
 
             Console.WriteLine($"Received on '{topic}': '{payload}'");
 
