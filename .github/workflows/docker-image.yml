@@ -17,7 +17,7 @@ jobs:
 
     # find the version
     - name: JSON to variables
-      uses: antifree/json-to-variables@v1.1.1
+      uses: antifree/json-to-variables@v1.1.2
       with:
         filename: './MqttSubscriberModule/module.json'
     - name: Show output
