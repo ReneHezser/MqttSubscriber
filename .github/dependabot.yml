@@ -24,3 +24,8 @@ updates:
     open-pull-requests-limit: 10
     assignees:
       - "renehezser"
+      
+    groups:
+      all-dependencies:
+        patterns:
+          - "*"
